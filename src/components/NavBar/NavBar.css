@@ -1,0 +1,44 @@
+.NavBar {
+    display: flex;
+    background: linear-gradient(-45deg, #602262, #CB78E7, #4B0264, #410255);
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+  }
+.menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+    
+  }
+.categories {
+    margin: 5px;
+    
+}
+.categories a {
+    text-decoration: none;
+    color: white;
+}
+
+.categorieSelected {
+    text-decoration: none;
+    color: white;
+    font-weight: 700; 
+}
+
+.logoNav {
+    width: 100px;
+    height: 40px; 
+}
+.zoomMenu {
+    transition: all 0.1s; }
+    
+.zoomMenu:hover {
+    transform: scale(1.05, 1.05);
+}
+.login {
+    text-decoration: none;
+    color: white;
+}
