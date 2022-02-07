@@ -1,4 +1,5 @@
 import './NavBar.css'
+import CartWidget from '../CartWidget/CartWidget'
 
 const NavBar = () => {
     return (
@@ -20,8 +21,8 @@ const NavBar = () => {
           </li>
         </ul>
         </div>
-        <div className='zoomMenu'>
-        <a className ='login' href='#login'>LOGIN</a>
+        <div>
+        <CartWidget colorText='white'/>
         </div>
       </nav>
     )

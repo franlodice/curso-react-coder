@@ -1,0 +1,19 @@
+.cartWidget {
+    display: flex;
+}
+.cartWidget img{
+    width: 30px;
+    height: 30px;
+    align-self: center;
+    margin-top: 10px;
+}
+.cartIcon {
+    width: 100px;
+    height: 40px; 
+}
+.zoomMenu {
+    transition: all 0.1s; }
+    
+.zoomMenu:hover {
+    transform: scale(1.05, 1.05);
+}
