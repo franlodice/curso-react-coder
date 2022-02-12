@@ -1,0 +1,32 @@
+.contador {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1px;
+}
+
+.contador button {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 30px;
+    height: 25px;
+    color: black;
+    font-size: 15px;
+    font-weight: 700;
+    background-color: white;
+    border-style:groove;
+    border-color: #410255;
+}
+
+.contador h3 {
+    color: #410255;
+    font-size: 25px;
+}
+.mainButton button {
+    background-color: #410255;
+    color: white;
+    border-style: none;
+    width: 135px;
+    height: 30px;
+    font-weight: 700;
+}
