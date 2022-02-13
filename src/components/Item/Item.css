@@ -1,0 +1,7 @@
+.item {
+    border: 1px solid #410255;
+    margin-left: 10px;
+}
+.item img {
+    width:200px;
+}
