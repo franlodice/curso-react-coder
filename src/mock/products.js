@@ -4,6 +4,7 @@ export const products = [
         name: 'Doritos BBQ',
         stock: 10,
         price: 350,
+        description: '400 gr',
         img: 'https://res.cloudinary.com/franlodice/image/upload/v1644719365/Products_Mesa_de_trabajo_1_mgs1vi.png',
         category: 'snacks',
     },
@@ -37,4 +38,10 @@ export const mostrarProductos = new Promise((resolve, reject) => {
     setTimeout(() => {
         resolve(products);
     }, 2000);
+});
+
+export const mostrarProducto = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve(products[0]); 
+    }, 3000);
 });
