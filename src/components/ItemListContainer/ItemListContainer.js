@@ -5,16 +5,7 @@ import ItemList from '../ItemList/ItemList'
 import { mostrarProductos } from '../../mock/products'
 
 
-const ItemListContainer = ({greeting}) => {
-    const clickOnAdd = (totalCount) => {
-        if (totalCount>0) {
-            console.log(`Se agregaron ${totalCount} productos al carrito`)
-        } else {
-            console.log ('No se han agregado productos')
-        } 
-        
-    }
-    
+const ItemListContainer = ({greeting}) => {   
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState (true);
 
@@ -31,6 +22,14 @@ const ItemListContainer = ({greeting}) => {
         });
     }, []);
     
+    const clickOnAdd = (totalCount) => {
+        if (totalCount>0) {
+            console.log(`Se agregaron ${totalCount} productos al carrito`)
+        } else {
+            console.log ('No se han agregado productos')
+        } 
+        
+    }
     
 
     return (
