@@ -1,6 +1,15 @@
 import './ItemDetail.css'
+import ItemCount from '../ItemCount.js/ItemCount'
 
 const ItemDetail = ({product}) => {
+    const clickOnAdd = (totalCount) => {
+        if (totalCount>0) {
+            console.log(`Se agregaron ${totalCount} productos al carrito`)
+        } else {
+            console.log ('No se han agregado productos')
+        }
+    } 
+        
     return (
     <article className="CardItem">
             <picture>
@@ -21,7 +30,7 @@ const ItemDetail = ({product}) => {
                 </p>
             </section>           
             <footer className='ItemFooter'>
-                
+            <ItemCount stock={product?.stock} initial={1} onAdd={clickOnAdd}/>
             </footer>
         </article>
     )

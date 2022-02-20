@@ -2,23 +2,27 @@ import { useEffect, useState } from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { mostrarProducto } from '../../mock/products'
 import './ItemDetailContainer.css'
+import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = () => {   
-    const [product, setProduct] = useState([]);
+    const [product, setProduct] = useState({});
     const [loading, setLoading] = useState (true);
+    const { productId } = useParams ()
 
-    useEffect(()=>{
-        mostrarProducto
-        .then((resolve)=>{
-            setProduct(resolve);
-        })
-        .catch ((error)=>{
-            alert(error);
+
+    useEffect(() => {
+        mostrarProducto(productId).then(item => {
+            setProduct(item)
+        }).catch(err  => {
+            console.log(err)
         })
         .finally (()=>{
             setLoading(false);
-        });
-    }, []);
+        })
+        return (() => {
+            setProduct ()
+        })
+    }, [productId]);
     
     return (
         <>

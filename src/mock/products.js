@@ -34,14 +34,30 @@ export const products = [
     },
 ];
 
-export const mostrarProductos = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve(products);
-    }, 2000);
-});
+//export const mostrarProductos = (category) => {
+//    return new Promise((resolve) => {
+//           setTimeout(() => {
+//                resolve(products)
+//            }, 2000)
+//    })
+//}
 
-export const mostrarProducto = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve(products[0]); 
-    }, 3000);
-});
+export const mostrarProductosPorCategoria = (categoryId) => {
+    return new Promise((resolve) => {
+        const prodFiltrado = products.filter(p => p.category === categoryId)
+        setTimeout(() => {
+            categoryId ? resolve (prodFiltrado) : resolve (products)
+        }, 1000)
+    })
+}
+
+export const mostrarProducto = (id) => {
+    return new Promise((resolve) => {
+        const prod = products.find(p => p.id === parseInt(id))
+        setTimeout(() => {
+            resolve(prod)
+        }, 2000)
+    })
+}
+
+
