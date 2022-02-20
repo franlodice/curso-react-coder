@@ -9,16 +9,17 @@ const NavBar = () => {
         <div>
         <ul className='menu'>
           <li className='categories'>
-            <NavLink to={'/'} className='categorieSelected'>HOME</NavLink>
+            <NavLink to={'/'} className={({ isActive }) => isActive ? 'categorieSelected' : 'Option'}>HOME</NavLink>
           </li>
           <li className='categories zoomMenu'>
-            <NavLink to={'/category/snacks'}>SNACKS</NavLink>
+            <NavLink to={'/category/snacks'} className={({ isActive }) => isActive ? 'categorieSelected' : 'Option'} 
+          >SNACKS</NavLink>
           </li>
           <li className='categories zoomMenu'>
-            <NavLink to={'/category/bebidas'}>BEBIDAS</NavLink>
+            <NavLink to={'/category/bebidas'}className={({ isActive }) => isActive ? 'categorieSelected' : 'Option'} >BEBIDAS</NavLink>
           </li>
           <li className='categories zoomMenu'>
-            <NavLink to={'/category/golosinas'}>GOLOSINAS</NavLink>
+            <NavLink to={'/category/golosinas'}className={({ isActive }) => isActive ? 'categorieSelected' : 'Option'} >GOLOSINAS</NavLink>
           </li>
         </ul>
         </div>

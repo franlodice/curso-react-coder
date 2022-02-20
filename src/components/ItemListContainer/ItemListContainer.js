@@ -1,6 +1,5 @@
 import { useEffect, useState  } from 'react'
 import './ItemListContainer.css'
-import ItemCount from '../ItemCount.js/ItemCount'
 import ItemList from '../ItemList/ItemList'
 import { mostrarProductosPorCategoria } from '../../mock/products'
 import { useParams } from 'react-router-dom'
@@ -19,9 +18,6 @@ const ItemListContainer = ({greeting}) => {
         })
         .finally (()=>{
             setLoading(false);
-        })
-        return (() => {
-            setProducts ()
         })
     }, [categoryId]);
     

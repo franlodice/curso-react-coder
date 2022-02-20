@@ -13,6 +13,7 @@ export const products = [
         name: 'CocaCola Light',
         stock: 3,
         price: 120,
+        description: '250 ml',
         img: 'https://res.cloudinary.com/franlodice/image/upload/v1644719365/Products-02_wjeinn.png',
         category: 'bebidas',
     },
@@ -21,6 +22,7 @@ export const products = [
         name: 'Chocolate Milka',
         stock: 7,
         price: 200,
+        description: '180 gr',
         img: 'https://res.cloudinary.com/franlodice/image/upload/v1644719364/Products-03_l55kic.png',
         category: 'golosinas',
     },
@@ -29,18 +31,11 @@ export const products = [
         name: 'Cheetos Crunchy',
         stock: 14,
         price: 300,
+        description: '500 gr',
         img: 'https://res.cloudinary.com/franlodice/image/upload/v1644719365/Products-04_hi3xj9.png',
         category: 'snacks',
     },
 ];
-
-//export const mostrarProductos = (category) => {
-//    return new Promise((resolve) => {
-//           setTimeout(() => {
-//                resolve(products)
-//            }, 2000)
-//    })
-//}
 
 export const mostrarProductosPorCategoria = (categoryId) => {
     return new Promise((resolve) => {
