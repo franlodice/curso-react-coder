@@ -1,15 +1,15 @@
 import './ItemDetail.css'
 import ItemCount from '../ItemCount.js/ItemCount'
+import { useState } from 'react'
+import {Link} from 'react-router-dom'
 
 const ItemDetail = ({product}) => {
-    const clickOnAdd = (totalCount) => {
-        if (totalCount>0) {
-            console.log(`Se agregaron ${totalCount} productos al carrito`)
-        } else {
-            console.log ('No se han agregado productos')
-        }
-    } 
-        
+    const [quantity, setQuantity] = useState (0)
+    const handleOnAdd = (quantity) => {
+        setQuantity(quantity)
+    }
+
+
     return (
     <article className="CardItem">
             <picture>
@@ -30,7 +30,11 @@ const ItemDetail = ({product}) => {
                 </p>
             </section>           
             <footer className='ItemFooter'>
-            <ItemCount stock={product?.stock} initial={1} onAdd={clickOnAdd}/>
+                {
+                    quantity > 0 ?
+                    <Link to={'/cart'} className='goToCar'> Ir a mi carrito </Link> :
+                    <ItemCount stock={product?.stock} initial={1} onAdd={handleOnAdd}/>
+                }
             </footer>
         </article>
     )
