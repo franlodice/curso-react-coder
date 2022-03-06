@@ -1,8 +1,12 @@
 import './NavBar.css'
 import CartWidget from '../CartWidget/CartWidget'
 import { NavLink } from 'react-router-dom'
+import { useContext } from 'react'
+import { CartContext } from '../../context/CartContext'
 
 const NavBar = () => {
+
+    const { cart } = useContext (CartContext)
     return (
       <nav className='NavBar'>
         <NavLink to={'/'}><img src={"./images/epaamarillo_simple.svg"} alt="Logotipo EPA" className='logoNav zoomMenu'/></NavLink>
@@ -24,7 +28,7 @@ const NavBar = () => {
         </ul>
         </div>
         <div>
-        <CartWidget colorText='white'/>
+          {cart.length > 0 && <CartWidget colorText='white'/>}
         </div>
       </nav>
     )

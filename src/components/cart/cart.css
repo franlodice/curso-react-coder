@@ -1,0 +1,14 @@
+.cart {
+    margin-left: 15%;
+
+}
+
+.alternativeButton {
+    background-color: white;
+    color: #410255;
+    border: 1px solid #410255;
+    width: 135px;
+    height: 30px;
+    font-weight: 700;
+    margin-top: 30px;
+}

@@ -3,13 +3,19 @@ import ItemCount from '../ItemCount.js/ItemCount'
 import { useState, useContext } from 'react'
 import {Link} from 'react-router-dom'
 import { CartContext } from '../../context/CartContext'
+import { useNotificationServices } from '../../services/notification/NotificationServices'
 
 const ItemDetail = ({product}) => {
     const [quantity, setQuantity] = useState (0)
+
     const {addToCart} = useContext (CartContext)
+
+    const setNotification = useNotificationServices()
+
     const handleOnAdd = (quantity) => {
         setQuantity(quantity)
         addToCart(product,quantity)
+        setNotification('success', `Se agregó ${product?.name} al carrito`)
     }
 
 

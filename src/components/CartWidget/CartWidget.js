@@ -1,12 +1,18 @@
 import './CartWidget.css'
+import {Link} from 'react-router-dom'
+import { useContext } from 'react'
+import { CartContext } from '../../context/CartContext'
+
 const CartWidget = ({colorText}) => {
+
+    const {getQuantity} = useContext (CartContext)
 
     return (
         <div className='zoomMenu cartWidget' style={{color: colorText}}>
-            <a href="#">
+            <Link to={'/cart'}>
                 <img src={"../images/car_icon.svg"} alt="Cart" className='cartIcon'/>
-            </a>
-            <p>1</p>
+            </Link>
+            <p>{getQuantity()}</p>
         </div>
     )
 }
