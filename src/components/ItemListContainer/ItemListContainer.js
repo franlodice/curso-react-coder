@@ -1,8 +1,9 @@
 import { useEffect, useState  } from 'react'
 import './ItemListContainer.css'
 import ItemList from '../ItemList/ItemList'
-import { mostrarProductosPorCategoria } from '../../mock/products'
 import { useParams } from 'react-router-dom'
+import { getDocs, collection, query, where } from 'firebase/firestore'
+import {firestoreDb} from '../../services/firebase/firebase'
 
 
 const ItemListContainer = ({greeting}) => {   
@@ -10,16 +11,39 @@ const ItemListContainer = ({greeting}) => {
     const [loading, setLoading] = useState (true);
     const { categoryId } = useParams ();
 
-    useEffect(() => {
-        mostrarProductosPorCategoria(categoryId).then(item => {
-            setProducts(item)
-        }).catch(err  => {
-            console.log(err)
+    useEffect (() => {
+        setLoading (true)
+
+        const collectionRef = categoryId ?
+            query(collection(firestoreDb, 'products'), where('category','==',categoryId)) :
+            collection(firestoreDb, 'products')
+        
+
+        getDocs(collectionRef).then(querySnapshot =>{
+            const products = querySnapshot.docs.map(doc =>{
+                return { id: doc.id, ...doc.data() }
+            })
+            setProducts (products)
+            
+        }).finally(()=>{
+            setLoading(false)
         })
-        .finally (()=>{
-            setLoading(false);
+
+        return (()=> {
+            setProducts()
         })
-    }, [categoryId]);
+    }, [categoryId])
+
+    //useEffect(() => {
+        //mostrarProductosPorCategoria(categoryId).then(item => {
+        //    setProducts(item)
+        //}).catch(err  => {
+        //    console.log(err)
+        //})
+        //.finally (()=>{
+        //    setLoading(false);
+        //})
+    //}, [categoryId]);
     
 
     return (

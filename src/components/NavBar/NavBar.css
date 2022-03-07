@@ -14,18 +14,34 @@
     
   }
 .categories {
-    margin: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+    
     
 }
 .categories a {
     text-decoration: none;
     color: white;
+    margin-right: 10px;
 }
 
 .categorieSelected {
     text-decoration: none;
     color: white;
     font-weight: 700; 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+}
+
+.Option {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
 }
 
 .logoNav {
