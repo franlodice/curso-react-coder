@@ -1,35 +1,39 @@
 import {useState} from 'react'
 import './ItemCount.css'
+import { useNotificationServices } from '../../services/notification/NotificationServices'
 
 const ItemCount = ({stock, initial, onAdd}) => {
-    const [count, setCount] = useState(initial)
+
+    const setNotification = useNotificationServices()
+    const [quantity, setQuantity] = useState(initial)
 
 const decrement = () => {
-    if (count>0) {
-        setCount (count-1)
+    if (quantity > 1) {
+        setQuantity (quantity-1)
+    } else  {
+        setNotification('error', `Debes agregar al menos 1 producto`)
     }
 }
 
 const increment = () => {
-    if (count < stock) {
-    setCount (count+1)
+    if (quantity < stock) {
+    setQuantity (quantity+1)
     } else  {
-        alert("No hay mas stock")
+        setNotification('error', `No tenemos más stock disponible`)
     }
     
 }
 
 
-
 return(
     <>
         <div className="contador">
-        <button onClick={decrement}>-</button>
-        <h3>{count}</h3>
-        <button onClick={increment}>+</button>
+            <button onClick={decrement}>-</button>
+            <h3>{quantity}</h3>
+            <button onClick={increment}>+</button>
         </div>
-        <div className="mainButton">
-        <button onClick={()=> onAdd(count)}>Agrega al Carrito</button>
+        <div className="mainButton0">
+            <button onClick={()=> onAdd(quantity)}>AGREGAR AL CARRITO</button>
         </div>
     </>
 )

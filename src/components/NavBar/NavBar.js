@@ -25,12 +25,15 @@ const NavBar = () => {
 
     return (
       <nav className='NavBar'>
+
         <NavLink to={'/'}><img src={"./images/epaamarillo_simple.svg"} alt="Logotipo EPA" className='logoNav zoomMenu'/></NavLink>
+
         <div className="categories">
           {categories.map(cat => <NavLink key={cat.id} to={`/category/${cat.id}`} className={({ isActive }) =>
               isActive ? 'categorieSelected zoomMenu' : 'Option zoomMenu'
           }>{cat.description}</NavLink>)}
         </div>
+        
         <div>
           {cart.length > 0 && <CartWidget colorText='white'/>}
         </div>

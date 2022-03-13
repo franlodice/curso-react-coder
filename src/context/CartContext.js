@@ -1,23 +1,23 @@
-import { useEffect, useState, createContext } from 'react';
+import {  useState, createContext } from 'react';
 
 export const CartContext = createContext();
 
 export const CartContextProvider = ({ children }) => {
+
     const [cart, setCart] = useState([]);
 
-    useEffect(() => {
-        console.log(cart);
-    }, [cart]);
 
     const cartVerify = (id) => {
         return cart.some((producto) => producto.id === id);
     };
+
     
     const addToCart = (product, quantity) => {
         cartVerify(product.id)
             ? addQuantity (product, quantity)
             : setCart([...cart, { ...product,  quantity }]);
     };
+
 
     const addQuantity = (product, quantity) => {
         const newProducts = cart.map((prod) => {
@@ -34,16 +34,18 @@ export const CartContextProvider = ({ children }) => {
         setCart(newProducts);
     };
 
-    //Para eliminar un producto del carrito (Proximamente)
+
+
     const removeItem = ( id ) =>{
         const filterProducts = cart.filter((prod)=>prod.id !== id)
         setCart(filterProducts)
     } 
 
-    //Para vaciar el carrito (Proximamente)
+
     const cleaningCart = ()=>{
         setCart([])
     } 
+
 
     const getQuantity = () => {
         let count = 0
@@ -53,6 +55,7 @@ export const CartContextProvider = ({ children }) => {
         return count
     }
 
+
     const getTotal = () => {
         let total =0
         cart.forEach(prod =>{
@@ -61,10 +64,18 @@ export const CartContextProvider = ({ children }) => {
         return total
     }
 
+
+    const productDuplicated = (id) => {
+        return cart.find((producto) => producto.id === id);
+    };
+
+    
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeItem, cleaningCart, getQuantity, getTotal }}>
+        <CartContext.Provider value={{ cart, addToCart, removeItem, cleaningCart, getQuantity, getTotal, productDuplicated }}>
             {children}
         </CartContext.Provider>
     );
 };
+
+export default CartContext
 

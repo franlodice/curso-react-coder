@@ -7,6 +7,10 @@
     margin-bottom: 5px;
 }
 
+.itemCart h3 {
+    margin-top: 30px;
+}
+
 .itemCart img {
     width: 75px;
     height: auto;
@@ -20,12 +24,20 @@
     align-self: left;
 }
 
-.productResume p {
-    margin-top: -20px;
-    margin-bottom: 5px;
+.detail  {
+    margin-top: -30px;
+    display: flex;
+    align-items: center;
+    margin-left: 2px;
 }
 
-button {
+.detail p {
+    margin-right: 10px;
+    font-size: 12px;
+
+}
+
+.mainButton2 {
     background-color: #410255;
     color: white;
     border-style: none;

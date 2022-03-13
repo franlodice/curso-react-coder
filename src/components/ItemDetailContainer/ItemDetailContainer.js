@@ -6,8 +6,11 @@ import {getDoc, doc} from 'firebase/firestore'
 import { firestoreDb } from '../../services/firebase/firebase';
 
 const ItemDetailContainer = () => {   
+
     const [product, setProduct] = useState({});
+
     const [loading, setLoading] = useState (true);
+
     const { productId } = useParams ()
 
     useEffect(() => {
@@ -26,20 +29,6 @@ const ItemDetailContainer = () => {
             setProduct ()
         })
     }, [productId]);
-
-    /*useEffect(() => {
-        mostrarProducto(productId).then(item => {
-            setProduct(item)
-        }).catch(err  => {
-            console.log(err)
-        })
-        .finally (()=>{
-            setLoading(false);
-        })
-        return (() => {
-            setProduct ()
-        })
-    }, [productId]);*/
     
     return (
         <>
@@ -47,7 +36,7 @@ const ItemDetailContainer = () => {
             <h4>Cargando Detalle...</h4> 
         ):(
             <div className="ItemDetailContainer">
-            <ItemDetail product={product}/>
+                <ItemDetail product={product}/>
             </div>
         )}
         </>

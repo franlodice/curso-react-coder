@@ -6,12 +6,16 @@ import { getDocs, collection, query, where } from 'firebase/firestore'
 import {firestoreDb} from '../../services/firebase/firebase'
 
 
-const ItemListContainer = ({greeting}) => {   
+const ItemListContainer = ({greeting}) => {  
+
     const [products, setProducts] = useState([]);
+
     const [loading, setLoading] = useState (true);
+
     const { categoryId } = useParams ();
 
     useEffect (() => {
+
         setLoading (true)
 
         const collectionRef = categoryId ?
@@ -34,17 +38,7 @@ const ItemListContainer = ({greeting}) => {
         })
     }, [categoryId])
 
-    //useEffect(() => {
-        //mostrarProductosPorCategoria(categoryId).then(item => {
-        //    setProducts(item)
-        //}).catch(err  => {
-        //    console.log(err)
-        //})
-        //.finally (()=>{
-        //    setLoading(false);
-        //})
-    //}, [categoryId]);
-    
+  
 
     return (
         <>
