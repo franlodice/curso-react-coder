@@ -28,9 +28,9 @@ Siga las instrucciones para ver el sitio en localhost.
 * [Firebase 9.6.8](https://firebase.google.com)
 Utilizado para almacenar y sincronizar en la base de datos **Firestore** los datos de los productos y de ordenes de compra de la aplicacion. En la base de datos hay 3 colecciones principales: **Products**,**Category** y **Orders**.
 
-    CATEGORÍA PRODUCTS: Carga la infomación de los productos, tales como: name, description, price y stock. EL ID del producto lo genera automáticamente Firestone. 
-    CATEGORÍA CATEGORY:  Carga la información de las categorías de productos y están enlazadas a la lista generada en el menú.
-    CATEGORÍA ORDERS: Carga cada orden generada una vez que un usuario CONFIRMA UNA ORDEN.  
+    COLECCIÓN PRODUCTS: Carga la infomación de los productos, tales como: name, description, price y stock. EL ID del producto lo genera automáticamente Firestone. // 
+    COLECCIÓN CATEGORY:  Carga la información de las categorías de productos y están enlazadas a la lista generada en el menú. //
+    COLECCIÓN ORDERS: Carga cada orden generada una vez que un usuario CONFIRMA UNA ORDEN.  
 
 * [React Router Dom 6.2.1](https://reactrouter.com/docs/en/v6)
 Utilizada para crear rutas que rendericen diferentes componentes, mejorando la navegabilidad y haciendo posible el ruteo dinámico.
@@ -123,3 +123,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## DEMO
+
+![Demo de la App](epa-demo.gif)
