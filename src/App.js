@@ -16,8 +16,8 @@ function App() {
             <BrowserRouter>
               <NavBar />
                 <Routes>
-                  <Route path='/' element={<ItemListContainer greeting="Hola Mundo!"/>}/>
-                  <Route path='/category/:categoryId' element={<ItemListContainer greeting="Hola Mundo!"/>}/>
+                  <Route path='/' element={<ItemListContainer greeting="Bienvenido a EpaKiosco!"/>}/>
+                  <Route path='/category/:categoryId' element={<ItemListContainer greeting="Selecciona un producto"/>}/>
                   <Route path='/detail/:productId' element={<ItemDetailContainer />}/>
                   <Route path='/Cart' element={<Cart />}/>
                 </Routes>
