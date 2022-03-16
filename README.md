@@ -2,6 +2,8 @@
 
 # Epa Kiosco - Market
 
+Desarrollado por Francisco Gutierrez.
+Curso React Js - CoderHouse - Comisión: 24925. Año: 2022.
 Epa Kiosco es una tienda de golosinas, snacks y bebidas que busca que cualquier persona pueda "ir a un kiosco" sin necesidad de moverse de su casa. Se desarrolla con una interfaz sencilla e intuitiva que convierta la experiencia de compra en algo fácil y rápido para los clientes.
 
 ## Ejecutar el sitio en local
