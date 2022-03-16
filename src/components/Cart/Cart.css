@@ -1,0 +1,31 @@
+.cart {
+    margin-left: 15%;
+
+}
+
+.mainButton3 {
+    background-color: #410255;
+    color: white;
+    border-style: none;
+    width: 180px;
+    height: 50px;
+    font-weight: 700;
+    margin-top: 30px;
+    margin-left: 0px;
+
+}
+
+.cleaningDiv {
+    text-align: right;
+    margin-right: 17%;
+}
+
+.cleanButton {
+    background-color: white;
+    color: #410255;
+    border: 1px solid #410255;
+    width: 120px;
+    height: 30px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
